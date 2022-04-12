@@ -56,8 +56,8 @@ def loadHR_batch(FLAGS, tar_size):
         #Check the input directory
         if (FLAGS.input_video_dir == ''):
             raise ValueError('Video input directory input_video_dir is not provided')
-        if (not os.path.exists(FLAGS.input_video_dir)):
-            raise ValueError('Video input directory not found')
+        if (not os.path.exists(FLAGS.input_video_dir)):            
+            raise ValueError(f'Video input directory {FLAGS.input_video_dir} not found')
             
         image_set_lists = []
         with tf.variable_scope('load_frame'):
