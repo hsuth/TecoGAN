@@ -1,3 +1,25 @@
+# fix for tensorflow-gpu 2.8.0 on rtx 3090, python Python 3.8.10
+## installation 
+
+```bash
+python -m venv venv
+source ./venv/bin/activate
+#先安裝torch install錯誤，要改用下列命令安裝
+pip install torch==1.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+pip install torchvision==0.11.2+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+＃再安裝
+pip install -r requirements2.txt
+#Test
+# Download our TecoGAN model, the _Vid4_ and _TOS_ scenes shown in our paper and video.
+python3 runGan.py 0
+# Run the inference mode on the calendar scene.
+python3 runGan.py 1 
+# Evaluate the results with 4 metrics, PSNR, LPIPS[1], and our temporal metrics tOF and tLP with pytorch.
+python3 runGan.py 2
+
+```
+
+
 # TecoGAN
 This repository contains source code and materials for the TecoGAN project, i.e. code for a TEmporally COherent GAN for video super-resolution.
 _Authors: Mengyu Chu, You Xie, Laura Leal-Taixe, Nils Thuerey. Technical University of Munich._
