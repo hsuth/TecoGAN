@@ -1,4 +1,4 @@
-# fix for tensorflow-gpu 2.8.0 on rtx 3090, python Python 3.8.10
+# fix for tensorflow-gpu 2.8.0 on rtx 3090, python Python 3.8.10, ubuntu 20.04
 ## installation 
 
 ```bash
